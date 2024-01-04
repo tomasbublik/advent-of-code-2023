@@ -1,9 +1,6 @@
 import cz.tomasbublik.readFileAsLinesUsingUseLines
-import java.awt.Toolkit
 import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
-import java.util.TimeZone
+import java.util.*
 
 fun epochToIso8601(time: Long): String? {
     val format = "yyyy-MM-dd HH:mm:ss z"

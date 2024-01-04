@@ -34,16 +34,18 @@ fun main() {
     }
 
     fun part2(input: List<String>): Int {
-        return input.size
+        val histories = input.map { line ->
+            line.trim().split("\\s+".toRegex()).map { it.toInt() }.reversed()
+        }
+        return sumOfExtrapolatedValues(histories)
     }
 
     // test if implementation meets criteria from the description, like:
     val testInput = readFileAsLinesUsingUseLines("src/main/resources/day_9_input_test")
     check(part1(testInput) == 114)
-//    check(part2(testInput) == 45000)
+    check(part2(testInput) == 2)
 
     val input = readFileAsLinesUsingUseLines("src/main/resources/day_9_input")
-    // returns 1798691765
     println(part1(input))
     println(part2(input))
 }
